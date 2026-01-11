@@ -1,0 +1,396 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ================================ HEADER ================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;                 /* ancho total de la pantalla */
+    height: 5rem;                 /* altura fija */
+    z-index: 1000;
+    transition: all 0.9s ease;
+    background-color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* HEADER NAV AJUSTADO */
+header nav {
+    display: flex;
+    justify-content: space-between;   /* logo a la izquierda, resto a la derecha */
+    align-items: center;
+    padding: 0 1.5rem;                /* margen interno lateral más compacto */
+    background-color: #fff;
+    width: 100%;
+    height: 100%;                     /* igual que el header */
+    box-sizing: border-box;
+}
+
+/* LOGO UNIVERSIDAD */
+.logo_titulo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo_titulo img {
+    width:3rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.logo_titulo p {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* CONTENEDOR MENU + BANDERAS */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;                       /* antes 10rem, más compacto */
+}
+
+/* MENÚ DE CATEGORÍAS */
+nav ul {
+    display: flex;
+    gap: 1rem;                       /* menos separación entre enlaces */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(249, 35, 35);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* LOGIN (o botón principal del header) */
+.login-container {
+    text-align: center;
+    margin: 0;                       /* elimina margen vertical excesivo */
+}
+
+.login-btn {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;            /* más compacto */
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.1);
+}
+
+/* BANDERAS DE IDIOMA */
+.banderas {
+    display: flex;
+    gap: 0.5rem;
+    width: auto;                     /* evita que se expanda */
+}
+
+.flag {
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.flag:hover {
+    transform: scale(1.1);
+}
+
+/* ================================ CARTEL CTA ================================ */
+#cartel_cta {
+    position: relative;
+    text-align: center;
+    margin-top: 5rem;                /* deja espacio para el header fijo */
+    overflow: visible;
+}
+
+#cartel_cta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 900;
+    filter: blur(0px);
+}
+
+/* TEXTO DE BIENVENIDA */
+#cartel_cta .texto-bienvenida {
+    position: absolute;
+    text-align: left;
+    top: 6rem;
+    left: 2rem;
+    width: 35rem;
+    color: #f5f5f5;
+    background-color: rgb(255, 40, 40);
+    padding: 2rem;
+    z-index: 950;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 1);
+}
+
+.texto-bienvenida h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.texto-bienvenida p {
+    font-size: 1.4rem;
+}
+
+.texto-bienvenida img {
+    width: 2rem !important;
+    height: auto !important;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* BOTÓN CTA */
+.cta-container {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-60%);
+}
+
+.cta {
+    background-color: rgb(255, 40, 40);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.cta:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    text-shadow: none;
+}
+
+/* ================================ SECCIONES COMPARTIDAS ================================ */
+#programa,
+#premios,
+#antiguos_premiados h2 {
+    color: rgba(249, 35, 35, 1);
+    text-align: center;
+    text-decoration: none;
+}
+
+/* ================================ PROGRAMA DEL EVENTO ================================ */
+#programa {
+    padding: 2rem 4rem 2rem 2rem;
+    margin: 3rem 2rem 0rem 2rem;
+    scroll-margin-top: 5rem;
+}
+
+.programa-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.programa-dia {
+    background: white;
+    width: 30rem;
+    border: 1px solid #ff0000;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgb(255, 0, 0);
+}
+
+.programa-dia h3 {
+    color: rgb(249, 35, 35);
+    margin-bottom: 1rem;
+}
+
+.programa-dia ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.programa-dia ul li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.programa-dia ul li b {
+    color: #000000;
+}
+
+/* ================================ FONDO ================================ */
+#imagen_fondo {
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#imagen_fondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================================ PREMIOS ================================ */
+#premios {
+    padding: 2rem 4rem 2rem 2rem;
+    margin: 1rem 2rem 0rem 2rem;
+    scroll-margin-top: 5rem;
+}
+
+#cat_premios {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.flipcard {
+    background: transparent;
+    width: 20rem;
+    height: 10rem;
+    perspective: 20rem;
+}
+
+.flipcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.flipcard:hover .flipcard-inner {
+    transform: rotateX(180deg);
+}
+
+.flipcard-front,
+.flipcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #fc7575;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipcard-front {
+    background-color: rgb(249, 35, 35);
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.flipcard-back {
+    background-color: #fff;
+    color: #000;
+    transform: rotateX(180deg);
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* ================================ ANTIGUOS PREMIADOS ================================ */
+#antiguos_premiados {
+    padding: 2rem 4rem 2rem 2rem;
+    margin: 2rem 2rem 2rem;
+    scroll-margin-top: 5rem;
+}
+
+#antiguos_premiados .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+#antiguos_premiados .card {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* ================================ FOOTER ================================ */
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+footer p,
+footer a {
+    font-size: 0.95rem;
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-redes a img {
+    width: 24px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.footer-redes a img:hover {
+    transform: scale(1.2);
+}

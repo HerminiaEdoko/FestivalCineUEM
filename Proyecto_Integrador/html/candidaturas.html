@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidaturas cortometrajes UEM</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/botones.css">
+    <link rel="stylesheet" href="../css/secciones.css">
+    <link rel="stylesheet" href="../css/candidaturas.css">
+
+    <!-- JS -->
+    <script src="../js/candidaturasLoader.js" defer></script>
+    <script src="../js/candidaturas.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header-candidaturas">
+        <a href="../html/organizador.html" class="btn-volver">
+            <!-- ICONO FLECHA "VOLVER" -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+            VOLVER A HOME ORGANIZADOR
+        </a>
+    </header>
+
+    <!-- TABLA CANDIDATURAS-->
+    <section id="candidaturas">
+
+        <h1>Candidaturas</h1>
+
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Nombre del corto</th>
+                    <th>Estado</th>
+                    <th>Nominado</th>
+                    <!-- th PARA ACCIONES -->
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla_candidaturas"></tbody>
+        </table>
+
+        
+    </section>
+
+    <!-- POPUP DE GESTIÓN DE CANDIDATURAS -->
+    <div id="popupGestion" class="popup oculto">
+        <div class="popup-contenido">
+
+            <h3>Gestión de candidatura</h3>
+
+            <p><strong>Obra:</strong> <span id="g_obra"></span></p>
+            <p><strong>Participante:</strong> <span id="g_participante"></span></p>
+            <p><strong>Categoría:</strong> <span id="g_categoria"></span></p>
+
+            <hr>
+
+            <label><strong>Estado:</strong></label>
+            <select id="g_estado">
+                <option value="pendiente">Pendiente</option>
+                <option value="aceptada">Aceptada</option>
+                <option value="rechazada">Rechazada</option>
+            </select>
+
+            <div id="bloqueFeedback" class="oculto">
+                <label>Motivo del rechazo:</label>
+                <textarea id="g_feedback"></textarea>
+            </div>
+
+            <div id="bloqueNominar" class="oculto">
+                <label>
+                    <input type="checkbox" id="g_nominar">
+                    Nominar a premio de su categoría
+                </label>
+            </div>
+
+            <div class="acciones-popup">
+                <button id="btnGuardarGestion">Guardar cambios</button>
+                <button id="btnCerrarGestion">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

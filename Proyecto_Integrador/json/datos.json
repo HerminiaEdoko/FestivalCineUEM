@@ -1,0 +1,192 @@
+{
+    "noticias": [
+        {
+            "id_noticia": 1,
+            "titulo": "Comienza la nueva edición del festival",
+            "contenido": "La edición de este año contará con nuevas categorías y más participantes.",
+            "fecha_publicacion": "2025-05-10 12:00"
+        },
+        {
+            "id_noticia": 2,
+            "titulo": "Confirmados los primeros patrocinadores",
+            "contenido": "Empresas tecnológicas y audiovisuales se suman al evento.",
+            "fecha_publicacion": "2025-05-12 09:30"
+        }
+    ],
+    "eventos": [
+        {
+            "id_evento": 1,
+            "fecha": "2025-06-10",
+            "hora": "17:00",
+            "titulo": "Inauguración del Festival",
+            "descripcion": "Acto de apertura con presentación oficial.",
+            "lugar": "Auditorio Principal"
+        },
+        {
+            "id_evento": 2,
+            "fecha": "2025-06-11",
+            "hora": "18:00",
+            "titulo": "Proyección de cortos finalistas",
+            "descripcion": "Sesión especial con los mejores cortometrajes.",
+            "lugar": "Sala 2"
+        }
+    ],
+    "premios": [
+    {
+        "id_categoria": 1,
+        "categoria": "Alumno",
+        "premios": [
+            { "puesto": "1º", "premio": "200€" },
+            { "puesto": "2º", "premio": "100€" },
+            { "puesto": "3º", "premio": "50€" }
+        ]
+    },
+    {
+        "id_categoria": 2,
+        "categoria": "Profesor",
+        "premios": [
+            { "puesto": "1º", "premio": "Trofeo de reconocimiento" }
+        ]
+    },
+    {
+        "id_categoria": 3,
+        "categoria": "Mejor Cortometraje",
+        "premios": [
+            { "puesto": "1º", "premio": "Estatuilla dorada" },
+            { "puesto": "2º", "premio": "Diploma honorífico" }
+        ]
+    }
+]
+,
+    "patrocinadores": [
+        {
+            "id_patrocinador": 1,
+            "id_edicion": 1,
+            "nombre": "Coca-Cola",
+            "logo": "img/patrocinadores/cocacola.png",
+            "url": "https://www.cocacola.es"
+        },
+        {
+            "id_patrocinador": 2,
+            "id_edicion": 1,
+            "nombre": "Netflix",
+            "logo": "img/patrocinadores/netflix.png",
+            "url": "https://www.netflix.com"
+        },
+        {
+            "id_patrocinador": 3,
+            "id_edicion": 1,
+            "nombre": "Sony",
+            "logo": "img/patrocinadores/sony.png",
+            "url": "https://www.sony.com"
+        },
+        {
+            "id_patrocinador": 4,
+            "id_edicion": 1,
+            "nombre": "Adobe",
+            "logo": "img/patrocinadores/adobe.png",
+            "url": "https://www.adobe.com"
+        },
+        {
+            "id_patrocinador": 5,
+            "id_edicion": 1,
+            "nombre": "Canon",
+            "logo": "img/patrocinadores/canon.png",
+            "url": "https://www.canon.es"
+        },
+        {
+            "id_patrocinador": 6,
+            "id_edicion": 1,
+            "nombre": "Movistar",
+            "logo": "img/patrocinadores/movistar.png",
+            "url": "https://www.movistar.es"
+        },
+        {
+            "id_patrocinador": 7,
+            "id_edicion": 1,
+            "nombre": "Iberia",
+            "logo": "img/patrocinadores/iberia.png",
+            "url": "https://www.iberia.com"
+        },
+        {
+            "id_patrocinador": 8,
+            "id_edicion": 1,
+            "nombre": "Samsung",
+            "logo": "img/patrocinadores/samsung.png",
+            "url": "https://www.samsung.com"
+        }
+    ],
+    "gala": [
+        {
+            "id_gala": 1,
+            "fecha": "2025-06-12",
+            "hora": "18:00",
+            "lugar": "Auditorio Principal",
+            "tipo": "Alfombra Roja",
+            "descripcion": "Recepción inicial con photocall y bienvenida."
+        },
+        {
+            "id_gala": 2,
+            "fecha": "2025-06-12",
+            "hora": "18:45",
+            "lugar": "Sala 2",
+            "tipo": "Cortos Finalistas",
+            "descripcion": "Proyección de los cortometrajes finalistas."
+        },
+        {
+            "id_gala": 3,
+            "fecha": "2025-06-12",
+            "hora": "20:00",
+            "lugar": "Auditorio Principal",
+            "tipo": "Actuación Musical",
+            "descripcion": "Actuación en directo de un artista invitado."
+        },
+        {
+            "id_gala": 4,
+            "fecha": "2025-06-12",
+            "hora": "20:30",
+            "lugar": "Auditorio Principal",
+            "tipo": "Entrega de Premios",
+            "descripcion": "Entrega de premios a los ganadores."
+        },
+        {
+            "id_gala": 5,
+            "fecha": "2025-06-12",
+            "hora": "22:00",
+            "lugar": "Terraza Exterior",
+            "tipo": "Cóctel",
+            "descripcion": "Cóctel de celebración con asistentes."
+        },
+        {
+            "id_gala": 6,
+            "fecha": "2025-06-12",
+            "hora": "23:00",
+            "lugar": "Sala Lounge",
+            "tipo": "Afterparty",
+            "descripcion": "Fiesta final con DJ."
+        }
+    ],
+    "ganadores": [],
+    
+    "candidaturas": [
+    {
+        "id_candidatura": 1,
+        "titulo_obra": "El Viaje",
+        "participante": "Laura Fernández",
+        "categoria": "Alumno",
+        "estado": "pendiente", 
+        "mensaje_rechazo": "",
+        "id_premio_nominado": null
+    },
+    {
+        "id_candidatura": 2,
+        "titulo_obra": "Sombras",
+        "participante": "Carlos Ruiz",
+        "categoria": "Alumni",
+        "estado": "pendiente",
+        "mensaje_rechazo": "",
+        "id_premio_nominado": null
+    }
+]
+
+}

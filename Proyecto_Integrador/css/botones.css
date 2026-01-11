@@ -1,0 +1,124 @@
+/* BOTONES CREAR AÑADIR */
+.btn-crear {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    margin-top: 0.5rem;
+
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+}
+
+.btn-crear:hover {
+    background-color: #070707;
+    color: #ffffff;
+    transform: translateX(10px);
+
+}
+
+/* BOTONES EDITAR */
+
+.btn-editar,
+.btn-borrar {
+    border: none;
+    margin-left: 0.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-editar {
+    background-color: #ffffff;
+}
+
+.btn-borrar {
+    background-color: #ffffff;
+}
+
+.btn-editar:hover,
+.btn-borrar:hover {
+    transform: scale(1.15);
+}
+
+/* ===========================
+   BOTÓN LOGOUT ANIMADO HACIA LA IZQUIERDA
+   =========================== */
+
+.btn-logout {
+    position: relative;
+    width: 45px;
+    /* tamaño fijo */
+    height: 45px;
+
+    background-color: #f5F5F5;
+    border: none;
+    border-radius: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    overflow: visible;
+    /* permite que el panel salga hacia fuera */
+
+    transition: background-color 0.2s ease;
+}
+
+/* Icono siempre visible */
+.logout-icon {
+    z-index: 2;
+}
+
+/* Panel que aparece al hacer hover */
+.logout-text {
+    position: absolute;
+    right: 45px;
+    top: 0;
+    height: 100%;
+
+    font-weight: bold;
+
+    color: #ffffff;
+    background-color: #FF2D24;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    white-space: nowrap;
+
+
+
+    opacity: 0;
+    transform: translateX(10px);
+    pointer-events: none;
+    /* evita que bloquee el hover */
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+/* HOVER: aparece el panel */
+.btn-logout:hover {
+    background-color: #ff0000;
+}
+
+/* El panel aparece y se vuelve clicable */
+.btn-logout:hover .logout-text {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* El conjunto es clicable */
+.btn-logout:hover,
+.btn-logout:hover * {
+    cursor: pointer;
+}

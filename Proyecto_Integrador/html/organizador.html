@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador - Festival</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/secciones.css">
+    <link rel="stylesheet" href="../css/botones.css">
+    <link rel="stylesheet" href="../css/popups.css">
+    <link rel="stylesheet" href="../css/popupFinEdicion.css">
+    <!-- API GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <!-- Utilidades generales -->
+    <script src="../js/scroll.js" defer></script>
+
+    <!-- Carga de datos y estructuras base -->
+    <script src="../js/dataLoader.js" defer></script>
+
+    <!-- Gestión de UI(user interface) (popups, overlays, etc.) -->
+    <script src="../js/popup.js" defer></script>
+    <script src="../js/popupFinalizarEdicion.js" defer></script>
+
+    <!-- Lógica CRUD que depende de popups y dataLoader -->
+    <script src="../js/cruds.js" defer></script>
+
+    <!-- Script final que inicializa tablas (depende de todo lo anterior) -->
+    <script src="../js/cargarTablas.js" defer></script>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- LOGO UEM -->
+        <div class="logo-container">
+            <img src="../img/logoue.jpg" alt="Logo Festival" class="logo">
+            <div class="site-name">
+                <span>Festival de Cine</span>
+                <span>Universidad Europea</span>
+            </div>
+        </div>
+
+        <!-- MENÚ DEL HEADER -->
+        <nav class="menu_header">
+            <ul>
+
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#premios">Premios</a></li>
+                <li><a href="#patrocinadores">Patrocinadores</a></li>
+                <li><a href="#gala">Gala</a></li>
+
+            </ul>
+        </nav>
+        <!-- LINK A CANDIDATURAS -->
+        <nav class="ir-a-candidaturas">
+            <a href="../html/candidaturas.html" class="btn-candidaturas">VER CANDIDATURAS</a>
+        </nav>
+
+        <!-- CERRAR SESIÓN -->
+        <div class="user-options">
+            <!-- ICONO PUERTA -->
+            <button class="btn-logout">
+                <span class="logout-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 21V3a2 2 0 0 1 2-2h7" />
+                        <polyline points="13 7 18 12 13 17" />
+                        <line x1="18" y1="12" x2="7" y2="12" />
+                    </svg>
+                </span>
+
+                <span class="logout-text">Cerrar sesión</span>
+            </button>
+
+            <!-- BANDERAS CAMBIAR IDIOMA (A FUTURO) -->
+            <div class="banderas">
+                <img src="../img/spain_flag.png" alt="Español" class="flag">
+                <img src="../img/uk_flag.png" alt="English" class="flag">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <!-- A partir de aquí tenemos las diferentes secciones de la página 
+        + noticias
+        + eventos
+        + premios
+        + patrocinadores
+        + gala 
+    -->
+    <main>
+
+        <!-- NOTICIAS -->
+        <section id="noticias">
+            <div class="contenedor_noticias">
+                <h2>Noticias</h2>
+
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Publicación</th>
+                            <th></th> <!-- acciones -->
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla_noticias"></tbody>
+                </table>
+
+                <!-- BOTÓN DE CREAR NOTICIA -->
+                <button class="btn-crear" id="abrirPopupNoticia"> + Nueva noticia</button>
+
+
+
+        </section>
+
+        <!-- EVENTOS -->
+        <section id="eventos">
+            <hr>
+            <div class="contenedor_eventos">
+                <h2>Eventos</h2>
+
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Fecha del evento</th>
+                            <th></th> <!-- acciones -->
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla_eventos"></tbody>
+                </table>
+
+                <!-- BOTÓN DE CREAR EVENTO -->
+                <button class="btn-crear" id="abrirPopupEvento">+ Nuevo Evento</button>
+
+            </div>
+        </section>
+
+        <!-- PREMIOS -->
+        <section id="premios">
+            <hr>
+            <div class="contenedor_premios">
+                <h2>Premios</h2>
+
+                <!-- CATEGORÍAS -->
+                <table class="tabla tabla-premios">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Puesto</th>
+                            <th>Premio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla_premios"></tbody>
+                </table>
+
+
+                <button class="btn-crear" id="btnCrearCategoria">+ Crear categoría</button>
+
+                <h2>Ganadores</h2>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Premio</th>
+                            <th>Ganador (Obra)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla_ganadores"></tbody>
+                </table>
+
+            </div>
+        </section>
+
+
+        <!-- PATROCINADORES -->
+        <section id="patrocinadores">
+            <hr>
+            <h2>Patrocinadores</h2>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Logo</th>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabla_patrocinadores"></tbody>
+            </table>
+
+            <button class="btn-crear" id="abrirPopUpPatrocinadores">+ Nuevo Patrocinador</button>
+
+
+        </section>
+
+
+
+
+        <!-- GALA -->
+        <section id="gala">
+            <hr>
+            <div class="contenedor_gala">
+                <h2>Gala</h2>
+
+                <!-- ===================== PRE-GALA ===================== -->
+                <div id="pregala" class="gala-panel active">
+                    <h3>Configuración de la Gala</h3>
+
+
+
+                    <table class="tabla tabla-gala">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Hora</th>
+                                <th>Sala</th>
+                                <th>Descripción</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla_pregala"></tbody>
+                    </table>
+
+                    <div class="acciones-gala">
+                        <button class="btn-crear" id="abrirPopupSeccionPregala">+ Nueva sección</button>
+                        <button class="btn-crear" id="abrirPopupFinalizar">Finalizar edición</button>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- ================= POPUP GLOBAL ================= -->
+    <!-- Este POPUP nos sirve para las diferentes opciones del CRUD de cada sección.
+      Gracias a JS, su contenido se rellena de diferente forma para:
+        + crear
+        + editar
+        + eliminar
+      -->
+    <div id="popup_global" class="popup-overlay">
+        <div class="popup">
+
+            <div class="popup-header">
+                <h3 id="popup_titulo"></h3>
+                <button id="popup_cerrar" class="popup-close-btn">✕</button>
+            </div>
+
+            <div id="popup_contenido" class="popup-content">
+
+
+                <div id="popup_error" class="popup-error oculto"></div>
+
+            </div>
+
+            <div class="popup-botones">
+                <button id="popup_cancelar" class="btnCancelar">Cancelar</button>
+                <button id="popup_guardar" class="btnAceptar">Guardar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= POPUP FINALIZAR EDICIÓN ================= -->
+    <!-- Este POPUP es único, cuenta con su propio css también.
+      Se rellena con los valores actuales de la web, y NO es editable, si se quiere hacer algún cambio 
+      antes de guardar una edición se debe realizar el cambio desde la sección pertinente 
+      -->
+
+    <div id="popup_finalizar" class="popup-finalizar-overlay">
+        <div class="popup-finalizar">
+
+            <div class="popup-finalizar-header">
+                <h2>Cerrar edición</h2>
+                <button id="cerrarPopupFinalizar" class="popup-finalizar-close">✕</button>
+            </div>
+
+            <div id="popup_finalizar_contenido" class="popup-finalizar-content">
+
+                <div class="popup-finalizar-section">
+                    <label>Año de la edición</label>
+                    <input type="text" id="finalizar_anio" readonly>
+                </div>
+
+                <div class="popup-finalizar-section">
+                    <h3>Premios otorgados</h3>
+                    <p class="nota">Solo se muestran los premios que tienen ganador asignado.</p>
+                    <div id="finalizar_premios_lista" class="finalizar-premios-lista"></div>
+                </div>
+
+                <div class="popup-finalizar-section">
+                    <label>Resumen de la edición (opcional)</label>
+                    <textarea id="finalizar_resumen" placeholder="Escribe un breve resumen de la edición..."></textarea>
+                </div>
+
+                <div class="popup-finalizar-section">
+                    <label>Imágenes de la edición (opcional)</label>
+                    <input type="file" id="finalizar_imagenes" multiple accept="image/*">
+                    <p class="nota">Solo se recogerán los nombres de los archivos por ahora.</p>
+                    <ul id="finalizar_imagenes_lista" class="finalizar-imagenes-lista"></ul>
+                </div>
+
+            </div>
+
+            <div class="popup-finalizar-botones">
+                <button id="popup_finalizar_cancelar" class="btnCancelar">Cancelar</button>
+                <button id="popup_finalizar_guardar" class="btnAceptar">Guardar datos de la edición</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    </div>
+    </div>
+
+
+</body>
+
+</html>

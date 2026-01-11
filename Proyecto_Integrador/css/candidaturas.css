@@ -1,0 +1,72 @@
+.header-candidaturas {
+    padding-top: 5rem;
+    padding-left: 10rem;
+    padding-right: 6rem;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    color: red;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.btn-volver:hover {
+    color: black;
+    transform: translateX(-10px);
+}
+
+#candidaturas {
+    padding: 0 10rem;
+}
+
+h1 {
+    color: red;
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-contenido {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 380px;
+}
+
+.oculto {
+    display: none;
+}
+
+.acciones-popup {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#estadoVacio {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.empty-img {
+    width: 180px;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.empty-text {
+    font-size: 1.2rem;
+    color: #666;
+}

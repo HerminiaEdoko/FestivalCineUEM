@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Festival Cortometrajes UEM</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" type="image/webp" href="../img/favicon.webp">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="login-box">
+            <form action="../php/login.php" method="POST">
+                <h2>Iniciar Sesión</h2>
+
+                <div class="input-box">
+                    <input type="text" name="usuario" required>
+                    <label>Usuario</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" name="passwd" required>
+                    <label>Contraseña</label>
+                </div>
+
+                <button type="submit" name="acceder">Acceder</button>
+
+                <div class="register-link">
+                    <p>¿No tienes una cuenta? <br><a href="#">Regístrate</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+/* ============================ HEADER ============================ */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 5rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+
+/* LOGO Y TEXTO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.logo {
+    height: 2.5rem;
+    /* ajusta según el tamaño real del logo */
+    margin-left: 1rem;
+
+}
+
+.site-name {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 16px;
+    color: #1E1E1E;
+
+}
+
+/* MENU */
+.menu_header {
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+.menu_header ul {
+    padding: 0;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+.menu_header ul li {
+    width: fit-content;
+
+}
+
+.menu_header ul li a {
+    color: #1E1E1E;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+
+.menu_header ul li a:hover {
+    transform: scale(1.05);
+    color: #FF3228;
+    
+}
+
+/* OPCIONES TOPRIGHT */
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* LOGIN/LOGOUT */
+.session-btn {
+    margin-right: 3rem;
+    background: #FF3228;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* BANDERAS */
+.banderas {
+    margin-right: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.flag {
+    width: 2rem;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.flag:hover{
+    transform: scale(1.1);
+}
+
+/* BOTÓN CANDIDATURAS */
+
+
+.btn-candidaturas {
+    
+    margin-right: 3rem;
+    padding: 1rem 2rem;
+    margin-top: 0;
+
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}   
+
+.btn-candidaturas:hover{
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    transform: translateX(10px);
+}
+
+
+/* MODO COMPACTO */
+
+/* Elementos que desaparecerán */
+.logo-container,
+.user-options {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Estado compacto al hacer scroll */
+header.compacto {
+    height: 3.5rem;
+    /* más pequeño */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Ocultar elementos laterales */
+header.compacto .logo-container,
+header.compacto .user-options {
+    opacity: 0;
+    transform: translateY(-1rem);
+    pointer-events: none;
+}
+
+/* El menú se centra automáticamente */
+header.compacto .menu_header {
+    margin: 0 auto;
+}
+
+header.compacto .btn-candidaturas {
+    padding: 0.4rem 1rem;   /* más estrecho */
+    font-size: 0.8rem;      /* más pequeño */
+    letter-spacing: 0.3px;
+    transform: none;        /* evita que se mueva al hacer hover */
+}
+
